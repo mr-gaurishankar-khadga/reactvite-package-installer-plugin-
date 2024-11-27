@@ -65,7 +65,6 @@ const installMissingPackages = () => {
   if (missingPackages.size > 0) {
     console.log(`Missing packages: [${Array.from(missingPackages).join(', ')}]`);
     console.log('Installing missing packages...');
-    
   
     const packagesToInstall = Array.from(missingPackages).join(' ');
     execSync(`npm install ${packagesToInstall}`, { stdio: 'inherit' });
@@ -75,13 +74,11 @@ const installMissingPackages = () => {
     console.log('No missing packages detected.');
   }
 };
-
 const runGSharp = (directory) => {
   console.log('Watching for changes in ....');
   console.log(`Running gsharp in directory: ${directory}`);
   checkDirectory(directory);
   installMissingPackages();
 };
-
 
 export { runGSharp };
